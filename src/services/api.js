@@ -1,4 +1,4 @@
-]import axios from 'axios';
+import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
@@ -27,7 +27,7 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
-    if (error.response && error.response.status === 401) {
+    if (error.response?.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
 
